@@ -19,7 +19,7 @@ namespace IIS.FuncTest
 
         [FunctionName(nameof(TestHttp))]
         public IActionResult TestHttp(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req)
         {
             logger.LogInformation("HttpTrigger ran");
             return new OkObjectResult("Perfect! 🙃");
